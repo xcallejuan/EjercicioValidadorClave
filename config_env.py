@@ -2,6 +2,7 @@ import os
 import platform
 import subprocess
 
+
 if __name__ == "__main__":
     # Try to enable script execution
     powershell64 = os.path.join(os.environ['SystemRoot'],
@@ -18,15 +19,17 @@ if __name__ == "__main__":
     elif os.path.exists("./.venv"):
         venv = ".venv"
 
+    cmd = ""
+
     if venv is None:
         # create virtual environment
-        os.system("python -m venv venv")
+        cmd += "python -m venv venv &&"
         venv = "venv"
 
-    # activate virtual environment
-    activate_this_file = f"{venv}/Scripts/activate_this.py"
-    with open(activate_this_file) as f:
-        exec(f.read(), dict(__file__=activate_this_file))
+    # activate virtual environment and install requirements
+    activate_script = f".\\{venv}\\Scripts\\activate"
+    cmd += f"{activate_script} && pip install -r requirements.txt"
 
-    # install requirements
-    os.system("pip install -r requirements.txt")
+    print(cmd)
+
+    os.system(cmd)
