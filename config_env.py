@@ -1,9 +1,16 @@
 import os
-
+import platform
+import subprocess
 
 if __name__ == "__main__":
     # Enable script execution
-    os.system("Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope LocalMachine")
+    powershell64 = os.path.join(os.environ['SystemRoot'],
+                                'SysNative' if platform.architecture()[0] == '32bit' else 'System32',
+                                'WindowsPowerShell', 'v1.0', 'powershell.exe')
+
+    psxmlgen = subprocess.Popen(f"{powershell64} Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope LocalMachine",
+                                cwd=os.getcwd())
+    result = psxmlgen.wait()
 
     venv = None
     if os.path.exists("./venv"):
@@ -17,7 +24,7 @@ if __name__ == "__main__":
         venv = ".venv"
 
     # activate virtual environment
-    os.system(f"./{venv}/Scripts/activate")
+    os.system(f".\\{venv}\\Scripts\\activate")
 
     # install requirements
     os.system("pip install -r requirements.txt")
