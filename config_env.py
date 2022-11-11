@@ -8,7 +8,7 @@ if __name__ == "__main__":
                                 'SysNative' if platform.architecture()[0] == '32bit' else 'System32',
                                 'WindowsPowerShell', 'v1.0', 'powershell.exe')
 
-    psxmlgen = subprocess.Popen(f"{powershell64} Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope LocalMachine",
+    psxmlgen = subprocess.Popen(f"{powershell64} Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser",
                                 cwd=os.getcwd())
     result = psxmlgen.wait()
 
