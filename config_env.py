@@ -24,7 +24,7 @@ if __name__ == "__main__":
         venv = "venv"
 
     # activate virtual environment
-    activate_this_file = f".\\{venv}\\Scripts\\activate_this.py"
+    activate_this_file = f"{venv}/Scripts/activate_this.py"
     with open(activate_this_file) as f:
         exec(f.read(), dict(__file__=activate_this_file))
 
