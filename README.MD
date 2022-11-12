@@ -67,7 +67,15 @@ descripción. En el caso en el que se cumplan todas las reglas, el método debe 
 Para realizar la actividad puedes clonar este repositorio e implementar el código en el archivo 
 `validador.py` que se encuentra en el paquete `validadorclave.modelo`.
 
-Una vez clone el repositorio, ejecute el archivo `config_env.py` para configurar el ambiente virtual. 
+Una vez clones el repositorio, debes crear y activar el ambiente virtual. Si sabes como hacerlo en PyCharm o VSCode, hazlo. Si no, ejecuta los siguientes comandos en la consola de Windows:
+
+* `python -m venv venv`
+* `venv/Scripts/activate`
+* `pip install -r requirements.txt`
+
+Si te sale un mensaje de error diciendo que no tienes permisos para ejecutar scripts, ejecuta el siguiente comando:
+
+* `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`
 
 ## Tenga en cuenta
 
