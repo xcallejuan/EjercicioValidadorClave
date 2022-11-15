@@ -83,10 +83,13 @@ def test_regla_calisto_verifica_palabra(regla_calisto, clave, esperado):
 
 @pytest.mark.parametrize("clave, esperado", [
     ("_ASd3", True),
-    ("tren0_", True),
-    ("4-adEr56p", False)
+    ("tren0@", True),
+    ("4-adEr56p", False),
+    ("4$adEr56p", True),
+    ("4-adE%56p", True),
+    ("4-adE#56p", True),
 ])
-def test_regla_ganimedes_verifica_guion_bajo(regla_ganimedes, clave, esperado):
+def test_regla_ganimedes_verifica_caracter_especial(regla_ganimedes, clave, esperado):
     assert regla_ganimedes.contiene_caracter_especial(clave) == esperado
 
 
