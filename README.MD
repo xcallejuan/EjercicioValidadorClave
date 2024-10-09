@@ -64,18 +64,8 @@ descripción. En el caso en el que se cumplan todas las reglas, el método debe 
 * El método `es_valida` de la clase `Validador` debe retornar el resultado de invocar el método 
 `es_valida` en el objeto `regla` que tiene como atributo.
 
-Para realizar la actividad puedes clonar este repositorio e implementar el código en el archivo 
+Para realizar la actividad puedes hacer fork y clonar este repositorio e implementar el código en el archivo 
 `validador.py` que se encuentra en el paquete `validadorclave.modelo`.
-
-Una vez clones el repositorio, debes crear y activar el ambiente virtual. Si sabes como hacerlo en PyCharm o VSCode, hazlo. Si no, ejecuta los siguientes comandos en la consola de Windows:
-
-* `python -m venv venv`
-* `venv/Scripts/activate`
-* `pip install -r requirements.txt`
-
-Si te sale un mensaje de error diciendo que no tienes permisos para ejecutar scripts, ejecuta el siguiente comando:
-
-* `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`
 
 ## Tenga en cuenta
 
@@ -83,6 +73,4 @@ Si te sale un mensaje de error diciendo que no tienes permisos para ejecutar scr
 requisitos establecidos. Para ejecutar las pruebas, debes instalar la dependencia pytest.
 * Para que las pruebas funcionen adecuadamente debes implementar el código respetando los nombres y la 
 definición de las clases y los métodos que se presentan en el diagrama.
-* La evaluación del ejercicio se hará con base en el cumplimiento de los requisitos que arrojen las 
-pruebas. Por lo tanto, cualquier fallo en las pruebas debido a nombres mal escritos o que no concuerden
-con el modelo dado se considerará como un requisito no cumplido, afectando la calificación del examen.
+
