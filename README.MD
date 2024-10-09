@@ -67,10 +67,28 @@ descripción. En el caso en el que se cumplan todas las reglas, el método debe 
 Para realizar la actividad puedes hacer fork y clonar este repositorio e implementar el código en el archivo 
 `validador.py` que se encuentra en el paquete `validadorclave.modelo`.
 
+### 3. Uso de las reglas de validación
+
+En el archivo `main.py` crea una función `validar_clave` que reciba una clave y una lista de reglas de validación.
+La función debe intentar validar la clave con un validador creado a partir de cada una de las reglas de validación dada.
+Si una regla no se cumple, la excepción correspondiente debe ser capturada e imprimir un mensaje de error
+claro para el usuario, especificando que regla falló
+
+Al final del proceso, si la clave pasa las validaciones, la función debe imprimir un mensaje indicando que la
+clave es válida para la validación específica.
+
+Por ejemplo, para una lista de reglas de validación que contiene las reglas `ReglaValidacionGanimedes` y 
+`ReglaValidacionCalisto`, y una clave que no cumple con ninguna de las reglas, la salida esperada sería:
+
+```
+Error: ReglaValidacionGanimedes: La clave debe tener una longitud de más de 8 caracteres
+Error: ReglaValidacionCalisto: La palabra calisto debe estar escrita con al menos dos letras en mayúscula
+```
+
 ## Tenga en cuenta
 
 * El proyecto incluye un conjunto de pruebas que puedes utilizar para verificar el cumplimiento de los 
-requisitos establecidos. Para ejecutar las pruebas, debes instalar la dependencia pytest.
+requisitos establecidos para las clases del módulo `validador`. Para ejecutar las pruebas, debes instalar la dependencia pytest.
 * Para que las pruebas funcionen adecuadamente debes implementar el código respetando los nombres y la 
 definición de las clases y los métodos que se presentan en el diagrama.
 
