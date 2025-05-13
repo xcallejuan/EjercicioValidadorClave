@@ -47,3 +47,17 @@ class ReglaValidacion(ABC):
                 raise NoTieneCaracterEspecialError(
                     "La clave debe contener al menos un carácter especial (@, _, #, $ o %)")
             return True
+class ReglaValidacionCalisto(ReglaValidacion):
+    def _init_(self):
+        super()._init_(6)
+
+    def contiene_calisto(self, clave):
+        clave_lower = clave.lower()
+        posiciones = [i for i in range(len(clave_lower)) if clave_lower.startswith("calisto", i)]
+
+        for pos in posiciones:
+            palabra_original = clave[pos:pos + 7]
+            mayusculas = sum(1 for c in palabra_original if c.isupper())
+            if 2 <= mayusculas < 7:
+                return True
+        return False
