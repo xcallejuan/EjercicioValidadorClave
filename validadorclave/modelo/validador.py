@@ -61,3 +61,7 @@ class ReglaValidacionCalisto(ReglaValidacion):
             if 2 <= mayusculas < 7:
                 return True
         return False
+
+    def es_valida(self, clave):
+        if not self._validar_longitud(clave):
+            raise NoCumpleLongitudMinimaError("La clave debe tener una longitud de más de 6 caracteres")
